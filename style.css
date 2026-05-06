@@ -4,10 +4,6 @@
     --color-grey-700: hsl(0, 0%, 20%);
     --color-grey-800: hsl(0, 0%, 12%);
     --color-grey-900: hsl(0, 0%, 8%);
-    /* --font-weight-normal: 400;
-    --font-weight-medium: 600;
-    --font-weight-bold: 700;
-    --font-size-base: 14px; */
 }
 
 * {
@@ -37,28 +33,32 @@ a {
 }
 
 h1 {
-    font-size: 22px;
+    font-size: 23px;
 }
 
 .card {
-    padding: 30px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 24px;
     background-color: var(--color-grey-800);
-    max-width: 337.5px;
+    max-width: 384px;
     width: 90%;
-    height: auto;
     border-radius: 12px;
 }
 
 .card img {
-    width: 80px;
-    height: 80px;
+    width: 88px;
+    height: 88px;
     border-radius: 50%;
-    margin: 5px 0;
+}
+
+.profile-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .location {
@@ -67,11 +67,16 @@ h1 {
     color: var(--color-green);
 }
 
+.bio {
+    font-size: 14px;
+    text-align: center;
+}
+
 .links {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 16px;
     width: 100%;
 }
 
@@ -81,24 +86,44 @@ h1 {
     align-items: center;
     background-color: var(--color-grey-700);
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
-.link:hover {
+/* Hover and Focus states for accessibility */
+.link:hover,
+.link:focus-within {
     background-color: var(--color-green);
     cursor: pointer;
 }
 
-.link a {
-    display: block;
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    transition: all 0.3s ease;
+/* Active state */
+.link:active {
+    background-color: var(--color-white);
+    transform: scale(0.98);
 }
 
-.link:hover a {
+.link a {
+    display: block;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.link:hover a,
+.link:focus-within a {
     color: var(--color-grey-900);
+}
+
+.link:active a {
+    color: var(--color-grey-900);
+}
+
+/* Focus indicator for keyboard navigation */
+.link:focus-within {
+    outline: 2px solid var(--color-white);
+    outline-offset: 4px;
 }
 
 .attribution {
